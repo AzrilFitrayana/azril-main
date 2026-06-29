@@ -1,0 +1,142 @@
+"use client";
+
+import {
+  BriefcaseBusiness,
+  CircleCheckBig,
+  Code2,
+  Languages,
+  MapPinned,
+  SquareTerminal,
+  UserRound,
+} from "lucide-react";
+import Image from "next/image";
+
+const imgProfile =
+  "https://www.figma.com/api/mcp/asset/76f23b6e-8309-4d1f-aac3-6a94900b65b4";
+
+const stats = [
+  {
+    icon: <MapPinned width="20" height="20" />,
+    label: "LOCATION",
+    value: "Tasikmalaya, Indonesia",
+  },
+  {
+    icon: <BriefcaseBusiness width="20" height="20" />,
+    label: "STATUS",
+    value: "Open to Work",
+  },
+  {
+    icon: <Languages width="20" height="20" />,
+    label: "LANGUAGES",
+    value: "Indonesian (Native)\nEnglish (Intermediate)",
+  },
+  {
+    icon: <SquareTerminal width="20" height="20" />,
+    label: "FOCUS",
+    value: "React • Next.js • Node.js",
+  },
+];
+
+const doing = [
+  "Build responsive web applications",
+  "Develop modern user interfaces",
+  "Integrate REST APIs and backend services",
+  "Write clean and maintainable code",
+  "Optimize performance and user experience",
+];
+
+const About = () => {
+  return (
+    <section id="about">
+      <div className="flex items-center gap-3 font-mono text-[12px] font-medium text-[#AD2C00] uppercase tracking-widest">
+        <span className="block w-8 h-px bg-[#AD2C00]" />
+        01. About
+      </div>
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_auto] gap-4 mt-3">
+        {/* Bio Card */}
+        <div className="bento-card-solid flex flex-col sm:flex-row gap-6 ">
+          {/* Profile image */}
+          <div className="w-full sm:w-48 lg:w-60 shrink-0 rounded-[20px] border-2 border-[#E2BFB6] overflow-hidden shadow-[0_1px_2px_rgba(0,0,0,0.05)] aspect-square sm:aspect-auto">
+            <Image
+              src={imgProfile}
+              alt="Muhammad Azril Fitrayana"
+              width={220}
+              height={220}
+              className="w-full h-full object-cover object-top"
+            />
+          </div>
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2 mb-2">
+              <UserRound strokeWidth={2.5} width="24" height="24" className="text-[#831F00]" />
+              <span className="font-display text-[20px] text-[#1A1C1C]">
+                About Me
+              </span>
+            </div>
+            <h3 className="font-display text-[22px] sm:text-[26px] font-medium text-[#1A1C1C] mb-1">
+              Muhammad Azril Fitrayana
+            </h3>
+            <p className="font-mono text-[12px] font-medium text-[#831F00] tracking-widest uppercase mb-4">
+              Fullstack Developer
+            </p>
+            <p className="font-body text-[14px] leading-relaxed text-justify sm:w-md text-[#5F5E5E] max-w-prose">
+              Full-stack developer from Indonesia and Informatics Engineering
+              graduate. Passionate about building responsive web applications
+              with React, Next.js, Node.js, and modern JavaScript. From UI
+              design to REST APIs and databases, I enjoy turning ideas into
+              clean, scalable, and user-friendly digital products. Always
+              learning, always building.
+            </p>
+          </div>
+        </div>
+
+        {/* Stats Card */}
+        <div className="bento-card-solid w-full lg:w-80 flex flex-col">
+          {stats.map((item, i, arr) => (
+            <div key={i}>
+              <div className="flex gap-3 items-start">
+                <span className="text-sm mt-0.5 shrink-0 text-[#831F00]">
+                  {item.icon}
+                </span>
+                <div>
+                  <div className="font-mono text-[10px] font-medium text-[#5A413A] tracking-widest uppercase mb-1">
+                    {item.label}
+                  </div>
+                  <div className="font-body text-[14px] text-[#1A1C1C] leading-6 whitespace-pre-line">
+                    {item.value}
+                  </div>
+                </div>
+              </div>
+              {i < arr.length - 1 && (
+                <div className="h-px bg-[#E2BFB6] opacity-50 my-4" />
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* What I Do Card */}
+        <div className="bento-card-solid w-full lg:w-80">
+          <div className="flex items-center gap-3 mb-6">
+            <Code2 strokeWidth={2.5} width="20" height="20" className="text-[#831F00]" />
+            <span className="font-display text-[20px] text-[#1A1C1C]">
+              What I Do
+            </span>
+          </div>
+          <ul className="flex flex-col gap-4">
+            {doing.map((item, i) => (
+              <li key={i} className="flex gap-4 items-start">
+                <span className="text-[#AD2C00] text-[10px] mt-0.5 shrink-0">
+                  <CircleCheckBig width="16" height="16" />
+                </span>
+                <span className="font-body text-[14px] text-[#5F5E5E] leading-5">
+                  {item}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default About;
