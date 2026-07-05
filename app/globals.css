@@ -167,7 +167,7 @@
 
   .bento-card-solid:hover,
   .bento-card-solid:focus-within {
-    @apply shadow-bento-hover ring-2 ring-primary/40;
+    @apply shadow-bento-hover ring-2 ring-primary/40 transition-all duration-300 ease-in-out;
   }
 
   .project-card-solid {
@@ -180,7 +180,7 @@
 
   .project-card-solid:hover,
   .project-card-solid:focus-within {
-    @apply shadow-bento-hover ring-2 ring-primary/40;
+    @apply shadow-bento-hover ring-2 ring-primary/40 transition-all duration-300 ease-in-out;
   }
 
   .bento-card-accent {
@@ -189,7 +189,7 @@
 
   .bento-card-accent:hover,
   .bento-card-accent:focus-within {
-    @apply shadow-bento-hover ring-2 ring-outline-variant/40;
+    @apply shadow-bento-hover ring-2 ring-outline-variant/40 transition-all duration-300 ease-in-out;
   }
 
   .bento-card-inverted {
@@ -198,7 +198,7 @@
 
   .bento-card-inverted:hover,
   .bento-card-inverted:focus-within {
-    @apply shadow-none ring-2 ring-inverse-on-surface/20;
+    @apply shadow-none ring-2 ring-inverse-on-surface/20 transition-all duration-300 ease-in-out;
   }
 
   .btn-primary,

@@ -42,7 +42,7 @@ const MailIcon = () => (
 
 const Contact = () => {
   return (
-    <section id="contactsocial" className="mt-4">
+    <section id="contactsocial">
       <div className="flex items-center gap-3 font-mono text-[12px] font-medium text-[#AD2C00] uppercase tracking-widest mb-4">
         <span className="block w-8 h-px bg-[#AD2C00]" />
         05. Contact

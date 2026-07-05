@@ -67,7 +67,7 @@ const TechStack = () => {
                   {label}
                 </span>
               </div>
-              <p className="text-[12px] text-[#5F5E5E]">{desc}</p>
+              <p className="text-[12px] text-[#8a8a8a]">{desc}</p>
             </div>
             <div className="flex flex-wrap gap-2">
               {tags.map((t) => (

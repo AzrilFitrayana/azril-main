@@ -88,7 +88,7 @@ const Experience = () => {
                   {item.role}
                 </div>
                 <div
-                  className={`font-body text-[14px] text-[#5F5E5E] leading-5`}
+                  className={`font-body text-[14px] text-[#8a8a8a] leading-5`}
                 >
                   {item.desc}
                 </div>
