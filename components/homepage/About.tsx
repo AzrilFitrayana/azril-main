@@ -52,11 +52,12 @@ const About = () => {
         <span className="block w-8 h-px bg-[#AD2C00]" />
         01. About
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_auto] gap-4 mt-3">
+
+      <div className="grid grid-cols-1 xl:grid-cols-[1fr_320px_320px] gap-4 mt-3">
         {/* Bio Card */}
-        <div className="bento-card-solid flex flex-col sm:flex-row gap-6 ">
+        <div className="bento-card-solid flex flex-col sm:flex-row gap-6">
           {/* Profile image */}
-          <div className="w-full sm:w-48 lg:w-60 shrink-0 rounded-[20px] border-2 border-[#E2BFB6] overflow-hidden shadow-[0_1px_2px_rgba(0,0,0,0.05)] aspect-square sm:aspect-auto">
+          <div className="w-full sm:w-48 lg:w-52 xl:w-60 shrink-0 rounded-[20px] border-2 border-[#E2BFB6] overflow-hidden shadow-[0_1px_2px_rgba(0,0,0,0.05)] aspect-square sm:aspect-auto">
             <Image
               src={imgProfile}
               alt="Muhammad Azril Fitrayana"
@@ -78,7 +79,8 @@ const About = () => {
             <p className="font-mono text-[12px] font-medium text-[#831F00] tracking-widest uppercase mb-4">
               Fullstack Developer
             </p>
-            <p className="font-body text-[14px] leading-relaxed text-justify sm:w-md text-[#5F5E5E] max-w-prose">
+
+            <p className="font-body text-[14px] leading-relaxed text-justify text-[#5F5E5E] max-w-prose">
               Full-stack developer from Indonesia and Informatics Engineering
               graduate. Passionate about building responsive web applications
               with React, Next.js, Node.js, and modern JavaScript. From UI
@@ -89,50 +91,52 @@ const About = () => {
           </div>
         </div>
 
-        {/* Stats Card */}
-        <div className="bento-card-solid w-full lg:w-80 flex flex-col">
-          {stats.map((item, i, arr) => (
-            <div key={i}>
-              <div className="flex gap-3 items-start">
-                <span className="text-sm mt-0.5 shrink-0 text-[#831F00]">
-                  {item.icon}
-                </span>
-                <div>
-                  <div className="font-mono text-[10px] font-medium text-[#5A413A] tracking-widest uppercase mb-1">
-                    {item.label}
-                  </div>
-                  <div className="font-body text-[14px] text-[#1A1C1C] leading-6 whitespace-pre-line">
-                    {item.value}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:contents gap-4">
+          {/* Stats Card */}
+          <div className="bento-card-solid w-full xl:w-80 flex flex-col">
+            {stats.map((item, i, arr) => (
+              <div key={i}>
+                <div className="flex gap-3 items-start">
+                  <span className="text-sm mt-0.5 shrink-0 text-[#831F00]">
+                    {item.icon}
+                  </span>
+                  <div>
+                    <div className="font-mono text-[10px] font-medium text-[#5A413A] tracking-widest uppercase mb-1">
+                      {item.label}
+                    </div>
+                    <div className="font-body text-[14px] text-[#1A1C1C] leading-6 whitespace-pre-line">
+                      {item.value}
+                    </div>
                   </div>
                 </div>
+                {i < arr.length - 1 && (
+                  <div className="h-px bg-[#E2BFB6] opacity-50 my-4" />
+                )}
               </div>
-              {i < arr.length - 1 && (
-                <div className="h-px bg-[#E2BFB6] opacity-50 my-4" />
-              )}
-            </div>
-          ))}
-        </div>
-
-        {/* What I Do Card */}
-        <div className="bento-card-solid w-full lg:w-80">
-          <div className="flex items-center gap-3 mb-6">
-            <Code2 strokeWidth={2.5} width="20" height="20" className="text-[#831F00]" />
-            <span className="font-display text-[20px] text-[#1A1C1C]">
-              What I Do
-            </span>
-          </div>
-          <ul className="flex flex-col gap-4">
-            {doing.map((item, i) => (
-              <li key={i} className="flex gap-4 items-start">
-                <span className="text-[#AD2C00] text-[10px] mt-0.5 shrink-0">
-                  <CircleCheckBig width="16" height="16" />
-                </span>
-                <span className="font-body text-[14px] text-[#5F5E5E] leading-5">
-                  {item}
-                </span>
-              </li>
             ))}
-          </ul>
+          </div>
+
+          {/* What I Do Card */}
+          <div className="bento-card-solid w-full xl:w-80">
+            <div className="flex items-center gap-3 mb-6">
+              <Code2 strokeWidth={2.5} width="20" height="20" className="text-[#831F00]" />
+              <span className="font-display text-[20px] text-[#1A1C1C]">
+                What I Do
+              </span>
+            </div>
+            <ul className="flex flex-col gap-4">
+              {doing.map((item, i) => (
+                <li key={i} className="flex gap-4 items-start">
+                  <span className="text-[#AD2C00] text-[10px] mt-0.5 shrink-0">
+                    <CircleCheckBig width="16" height="16" />
+                  </span>
+                  <span className="font-body text-[14px] text-[#5F5E5E] leading-5">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>

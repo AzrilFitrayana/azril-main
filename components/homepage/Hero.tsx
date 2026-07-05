@@ -25,11 +25,11 @@ const Hero = ({ isPlaying, onPlay, onPause }: VinylRecordProps) => {
   }, [isPlaying]);
 
   return (
-    <section className="w-full sm:max-w-370 sm:mx-auto mt-5 px-4 sm:px-6 md:px-0">
-      <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-4 sm:gap-5">
+    <section className="w-full sm:max-w-370 sm:mx-auto mt-5 px-4 2xl:px-0">
+      <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-4 sm:gap-2 xl:gap-5">
         {/* Hero Card */}
         <div className="bg-[#AD2D01] px-6 py-8 sm:px-8 sm:py-10 md:px-9 md:py-10 flex items-center h-auto min-h-80 md:h-120 relative overflow-hidden shadow-bento border border-[#E2E2E2]">
-          <div className="absolute top-3 left-3 sm:top-7 sm:left-7 sm w-3 h-3 rounded bg-white shadow-[0_0_20px_white]" />
+          <div className="absolute top-3 left-3 lg:top-5 lg:left-5 xl:top-7 xl:left-7 sm w-3 h-3 rounded bg-white shadow-[0_0_20px_white]" />
           <div className="relative z-10">
             <h1 className="font-display font-extrabold text-[40px] leading-[0.95] sm:text-[56px] md:text-[70px] md:leading-18 text-white mb-4">
               <span className="block text-white">BUILDING SCALABLE</span>
@@ -97,13 +97,13 @@ const Hero = ({ isPlaying, onPlay, onPause }: VinylRecordProps) => {
                 alt="Vinyl Record"
                 width={400}
                 height={400}
-                className="block max-w-72.5 sm:max-w-102.5 h-auto mx-auto"
+                className="block max-w-72.5 lg:max-w-80 xl:max-w-102.5 h-auto mx-auto"
               />
             </motion.div>
           </div>
 
           <motion.div
-            className="absolute top-0 left-1 sm:top-2 sm:-left-6  cursor-pointer"
+            className="absolute top-0 left-8 lg:-left-19 lg:top-5 xl:top-2 xl:-left-6  cursor-pointer"
             style={{
               transformOrigin: "80% 20%",
               filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.2))",
@@ -124,12 +124,12 @@ const Hero = ({ isPlaying, onPlay, onPause }: VinylRecordProps) => {
               alt="Tonearm"
               width={334}
               height={334}
-              className="block max-w-60 sm:max-w-102.5"
+              className="block max-w-60 sm:max-w-70 xl:max-w-102.5"
             />
           </motion.div>
 
           {/* Now playing label */}
-          <div className="absolute bottom-4 left-4 right-4 sm:bottom-12 sm:left-6 sm:right-auto bg-[rgba(249,249,249,0.8)] backdrop-blur-[2px] border border-[#E2BFB6] rounded-2xl p-3 sm:p-3.5 w-auto sm:w-79 shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
+          <div className="absolute bottom-4 left-4 right-4 lg:bottom-12 xl:bottom-12 xl:left-6 xl:right-auto bg-[rgba(249,249,249,0.8)] backdrop-blur-[2px] border border-[#E2BFB6] rounded-2xl p-3 xl:p-3.5 w-auto xl:w-79 shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
             <div className="flex items-center justify-between gap-2">
               <span className="font-mono text-[11px] font-medium text-[#1A1C1C] tracking-wide uppercase leading-tight">
                 no more what if

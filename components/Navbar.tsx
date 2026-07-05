@@ -20,7 +20,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="hidden md:flex justify-between items-center container mx-auto py-5 font-jetbrains text-[12px] font-medium tracking-wider sticky top-0 z-50 bg-[#F9F9F9]">
+    <div className="hidden md:flex justify-between items-center 2xl:container mx-auto py-5 px-4 2xl:px-0 font-jetbrains text-[12px] font-medium tracking-wider sticky top-0 z-50 bg-[#F9F9F9]">
       <span className="text-[#AD2C00] border-2 border-[#AD2C00] px-4 py-2">
         {time} WIB
       </span>

@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#F9F9F9]">
       <Hero isPlaying={isPlaying} onPlay={handlePlay} onPause={handlePause} />
-      <div className="w-full sm:max-w-370 sm:mx-auto px-4 sm:px-0">
+      <div className="w-full sm:max-w-370 sm:mx-auto px-4 2xl:px-0">
         <TechTicker />
         <div className="pb-10">
           <About />
