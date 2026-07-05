@@ -9,6 +9,7 @@ import Projects from "@/components/homepage/Projects";
 import Contact from "@/components/homepage/Contact";
 import Footer from "@/components/Footer";
 import { useState } from "react";
+import ProjectsCard from "@/components/homepage/ProjectsCard";
 
 export default function Home() {
   const [isPlaying, setIsPlaying] = useState(false)
@@ -30,7 +31,8 @@ export default function Home() {
           <About />
           <Experience />
           <TechStack />
-          <Projects />
+          {/* <Projects /> */}
+          <ProjectsCard />
           <Contact />
         </div>
       </div>
