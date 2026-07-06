@@ -60,7 +60,7 @@ const ProjectsCard = () => {
     offset: ["start start", "end start"],
   });
 
-  // Hide heading when scrollYProgress exceeds threshold
+  // Sembunyikan heading saat scroll melebihi threshold
   useMotionValueEvent(scrollYProgress, "change", (v) => {
     setHeadingHidden(v > HIDE_THRESHOLD);
   });

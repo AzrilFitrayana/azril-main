@@ -29,14 +29,14 @@ const StackCard = ({ project, index, total }: StackCardProps) => {
   const y = useTransform(scrollYProgress, [0, 1], [0, -24]);
 
   return (
-    <section
+    <div
       ref={ref}
       className="sticky top-16 md:top-25 flex md:mt-4 py-6 md:py-0"
       style={{ zIndex: index + 1 }}
     >
       <motion.div
         // href="#"
-        className="mx-auto w-full grid grid-cols-1 md:grid-cols-2 p-4 mb-10 gap-6 sm:gap-8 md:gap-12.5 bg-white shadow-[0_4px_24px_-4px_rgba(0,0,0,0.0)]"
+        className="mx-auto w-full grid grid-cols-1 md:grid-cols-2 p-4 mb-10 gap-6 sm:gap-8 md:gap-12.5 bg-white shadow-[0_0_4px_rgba(0,0,0,0.05)]"
         style={{
           scale,
           y,
@@ -73,7 +73,7 @@ const StackCard = ({ project, index, total }: StackCardProps) => {
           </span>
         </div>
       </motion.div>
-    </section>
+    </div>
   );
 };
 

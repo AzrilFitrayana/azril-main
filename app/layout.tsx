@@ -55,7 +55,7 @@ export default function RootLayout({
         <header className="w-full border-b border-[#E2E2E2]">
           <Navbar />
         </header>
-        <main className="flex-1 w-full">{children}</main>
+        <main className="flex-1 w-full mt-20">{children}</main>
       </body>
     </html>
   );
