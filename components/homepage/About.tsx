@@ -10,6 +10,7 @@ import {
   UserRound,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const stats = [
   {
@@ -92,12 +93,9 @@ const About = () => {
               </div>
 
               <p className="font-body text-[14px] leading-relaxed text-justify text-[#8a8a8a] max-w-prose">
-                Full-stack developer from Indonesia and Informatics Engineering
-                graduate. Passionate about building responsive web applications
-                with React, Next.js, Node.js, and modern JavaScript. From UI
-                design to REST APIs and databases, I enjoy turning ideas into
-                clean, scalable, and user-friendly digital products. Always
-                learning, always building.
+                Full-stack developer from Indonesia with an eye for clean design. Informatics Engineering grad from <Link href="https://stmik-dci.ac.id/" target="_blank"
+                  rel="noopener noreferrer" className="font-bold underline text-[#5a5959]">STMIK DCI</Link>. Building responsive web experiences with React, Next.js, Node.js, and modern JavaScript. From crafting interfaces to designing APIs and databases — I enjoy owning the whole development process. Code lives on <Link href="https://github.com/AzrilFitrayana" target="_blank"
+                    rel="noopener noreferrer" className="font-bold underline text-[#5a5959]">GitHub</Link>. About a year into development, still curious, learning, and improving every day.
               </p>
             </div>
           </div>

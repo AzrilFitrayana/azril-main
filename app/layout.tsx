@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Hanken_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import ScrollWrapper from "@/components/ScrollWrapper";
 
 const hankenGrotesk = Hanken_Grotesk({
   variable: "--font-hanken",
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Muhammad Azril Fitrayana | Fullstack Developer",
     description:
-      "Muhammad Azril Fitrayana, A full-stack developer focused on building web applications and crafting seamless user experiences. Over 1 year of experience in full-stack development using Node.js.",
+      "Muhammad Azril Fitrayana, A full-stack developer focused on building web applications and crafting seamless user experiences. Over 1 year of experience in full-stack development.",
     // url: "https://adimf.dev",
     siteName: "Muhammad Azril Fitrayana",
     // images: [
@@ -52,10 +53,12 @@ export default function RootLayout({
       className={`${hankenGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <header className="w-full border-b border-[#E2E2E2]">
-          <Navbar />
-        </header>
-        <main className="flex-1 w-full">{children}</main>
+        <ScrollWrapper>
+          <header className="w-full border-b border-[#E2E2E2]">
+            <Navbar />
+          </header>
+          <main className="flex-1 w-full mt-20">{children}</main>
+        </ScrollWrapper>
       </body>
     </html>
   );
