@@ -2,15 +2,9 @@
 
 import { useState } from "react";
 import { motion, useScroll } from "motion/react"
+import Projects from "@/components/Projects";
 
-import Hero from "@/components/homepage/Hero";
-import TechTicker from "@/components/homepage/TechTicker";
-import About from "@/components/homepage/About";
-import Experience from "@/components/homepage/Experience";
-import TechStack from "@/components/homepage/TechStack";
-import Contact from "@/components/homepage/Contact";
-import Footer from "@/components/Footer";
-import ProjectsCard from "@/components/homepage/ProjectsCard";
+
 
 export default function Home() {
     const { scrollYProgress } = useScroll()
@@ -31,9 +25,8 @@ export default function Home() {
                 }} />
 
             <div className="w-full sm:max-w-370 sm:mx-auto px-4 2xl:px-0 pb-10">
-                
+                <Projects />
             </div>
-            <Footer />
         </div>
     );
 }

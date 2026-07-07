@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import StackCard from "../StackCard";
 import { useRef, useState } from "react";
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
+import Link from "next/link";
 
 const projects = [
   {
@@ -61,15 +62,15 @@ const ProjectsCard = () => {
           <span className="block w-6 sm:w-8 h-px bg-[#AD2C00]" />
           04. Project
         </motion.div>
-        {/* <a
-          href="#"
+        <Link
+          href="/projects"
           className="group font-mono text-[11px] sm:text-[12px] font-extrabold text-[#AD2C00] tracking-widest uppercase no-underline flex items-center gap-2"
         >
           View More
           <ArrowRight
             className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-200 ease-out group-hover:translate-x-1 group-active:translate-x-0"
           />
-        </a> */}
+        </Link>
       </div>
 
       <div>
