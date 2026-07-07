@@ -15,22 +15,24 @@ const socialMediaLinks = [
 
 const Footer = () => {
   return (
-    <footer className="border-t border-[#E2E2E2] bg-[#F9F9F9] px-16 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
-      <span className="font-mono text-[12px] font-medium text-[#1A1C1C] tracking-widest uppercase">
-        © 2026 created by Muhammad Azril Fitrayana
-      </span>
-      <div className="flex gap-8">
-        {socialMediaLinks.map((media, index) => (
-          <a
-            key={index}
-            href={media.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-mono text-[12px] font-medium text-[#5F5E5E] no-underline uppercase hover:text-[#AD2C00] transition-colors"
-          >
-            {media.name}
-          </a>
-        ))}
+    <footer className="border-t border-[#E2E2E2] bg-[#F9F9F9] ">
+      <div className="container mx-auto w-full flex flex-col px-16 py-8  md:flex-row items-center justify-between gap-4">
+        <span className="font-mono text-[12px] font-medium text-[#1A1C1C] tracking-widest uppercase">
+          © 2026 created by Muhammad Azril Fitrayana
+        </span>
+        <div className="flex gap-8">
+          {socialMediaLinks.map((media, index) => (
+            <a
+              key={index}
+              href={media.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono text-[12px] font-medium text-[#5F5E5E] no-underline uppercase hover:text-[#AD2C00] transition-colors"
+            >
+              {media.name}
+            </a>
+          ))}
+        </div>
       </div>
     </footer>
   );

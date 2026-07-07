@@ -8,9 +8,7 @@ import TechTicker from "@/components/homepage/TechTicker";
 import About from "@/components/homepage/About";
 import Experience from "@/components/homepage/Experience";
 import TechStack from "@/components/homepage/TechStack";
-import Projects from "@/components/homepage/Projects";
 import Contact from "@/components/homepage/Contact";
-import Footer from "@/components/Footer";
 import ProjectsCard from "@/components/homepage/ProjectsCard";
 
 export default function Home() {
@@ -36,23 +34,21 @@ export default function Home() {
           right: 0,
           height: 4,
           originX: 0,
-          zIndex:100,
+          zIndex: 100,
           backgroundColor: "red",
         }} />
 
       <Hero isPlaying={isPlaying} onPlay={handlePlay} onPause={handlePause} />
       <div className="w-full sm:max-w-370 sm:mx-auto px-4 2xl:px-0">
-        <TechTicker />
         <div className="pb-10">
+          <TechTicker />
           <About />
           <Experience />
           <TechStack />
-          {/* <Projects /> */}
           <ProjectsCard />
           <Contact />
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

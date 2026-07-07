@@ -3,6 +3,7 @@ import { Hanken_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import ScrollWrapper from "@/components/ScrollWrapper";
+import Footer from "@/components/Footer";
 
 const hankenGrotesk = Hanken_Grotesk({
   variable: "--font-hanken",
@@ -58,6 +59,7 @@ export default function RootLayout({
             <Navbar />
           </header>
           <main className="flex-1 w-full mt-20">{children}</main>
+          <Footer />
         </ScrollWrapper>
       </body>
     </html>
