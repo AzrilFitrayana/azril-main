@@ -10,6 +10,7 @@ const projects = [
     id: 1,
     category: "Kora Kagaz · Sustainability",
     tag: "Service Design",
+    stack: ["Figma", "Adobe XD", "Prototyping"],
     title: (
       <>
         Making recycling
@@ -24,6 +25,7 @@ const projects = [
     id: 2,
     category: "Sprivy · Farm to Home",
     tag: "Design Project",
+    stack: ["Figma", "Adobe XD", "Prototyping"],
     title: (
       <>
         Bringing farm-fresh
@@ -38,6 +40,7 @@ const projects = [
     id: 3,
     category: "Loopwear · Circular Fashion",
     tag: "Product Design",
+    stack: ["Figma", "Adobe XD", "Prototyping"],
     title: (
       <>
         Second-hand,
