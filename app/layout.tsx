@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import ScrollWrapper from "@/components/ScrollWrapper";
 import Footer from "@/components/Footer";
+import NavbarMobile from "@/components/NavbarMobile";
 
 const hankenGrotesk = Hanken_Grotesk({
   variable: "--font-hanken",
@@ -29,15 +30,8 @@ export const metadata: Metadata = {
     title: "Muhammad Azril Fitrayana | Fullstack Developer",
     description:
       "Muhammad Azril Fitrayana, A full-stack developer focused on building web applications and crafting seamless user experiences. Over 1 year of experience in full-stack development.",
-    // url: "https://adimf.dev",
+    url: "https://azril-main.vercel.app/",
     siteName: "Muhammad Azril Fitrayana",
-    // images: [
-    //   {
-    //     url: "https://adimf.vercel.app/image-open-graph.png",
-    //     width: 800,
-    //     height: 600,
-    //   },
-    // ],
     locale: "id_ID",
     type: "website",
   },
@@ -56,9 +50,10 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <ScrollWrapper>
           <header className="w-full border-b border-[#E2E2E2]">
+            <NavbarMobile />
             <Navbar />
           </header>
-          <main className="flex-1 w-full mt-20">{children}</main>
+          <main className="flex-1 w-full mt-10 sm:mt-20">{children}</main>
           <Footer />
         </ScrollWrapper>
       </body>
