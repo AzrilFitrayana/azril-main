@@ -8,48 +8,31 @@ import { motion, useMotionValueEvent, useScroll } from "motion/react";
 const projects = [
   {
     id: 1,
-    category: "Kora Kagaz · Sustainability",
-    tag: "Service Design",
-    stack: ["Figma", "Adobe XD", "Prototyping"],
+    category: "EMPLOYEE MANAGEMENT SYSTEM · 2024",
+    tag: "FULLSTACK DEVELOPMENT",
+    stack: ["Laravel", "MYSQL"],
     title: (
       <>
-        Making recycling
-        <br />
-        <em>a habit</em>, not a task
+        StaffFlow
       </>
     ),
-    desc: "Rewards-driven recycling app yang mengubah pemilahan sampah jadi streak harian, dengan credit nyata untuk drop-off nyata.",
+    desc: " Team management tool that turns scattered spreadsheets into one live dashboard — attendance, leave, and payroll updating in real time.",
     bg: "#F0C93B",
+    img: "/project/StaffFlow.png"
   },
   {
     id: 2,
-    category: "Sprivy · Farm to Home",
-    tag: "Design Project",
-    stack: ["Figma", "Adobe XD", "Prototyping"],
+    category: "IoT Monitoring System · 2025",
+    tag: "IoT / EMBEDDED SYSTEMS",
+    stack: ["IOT", "ESP32", "WhatsApp API"],
     title: (
       <>
-        Bringing farm-fresh
-        <br />
-        food closer to home
+        DripAlert
       </>
     ),
-    desc: "Marketplace farm-to-home yang membawa kepercayaan pasar lokal ke pengalaman belanja digital — sourcing transparan, porsi fleksibel, packaging yang dipikirkan.",
+    desc: " A smart IV monitoring device that detects blocked or depleted drips before nurses do — automatic WhatsApp alerts via optocoupler and load cell sensing, no manual bedside checks required.",
     bg: "#3E8E5B",
-  },
-  {
-    id: 3,
-    category: "Loopwear · Circular Fashion",
-    tag: "Product Design",
-    stack: ["Figma", "Adobe XD", "Prototyping"],
-    title: (
-      <>
-        Second-hand,
-        <br />
-        <em>first choice</em>
-      </>
-    ),
-    desc: "Platform resale di mana kondisi, keaslian, dan cerita barang sama terlihatnya dengan harga — jadi barang preloved nggak terasa seperti kompromi.",
-    bg: "#4A5FC1",
+    img: "/project/Group 1.jpg"
   },
 ];
 

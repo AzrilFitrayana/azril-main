@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 
@@ -12,6 +13,7 @@ interface StackCardProps {
     desc: string;
     bg: string;
     stack: string[];
+    img: string;
   };
   index: number;
   total: number;
@@ -32,29 +34,12 @@ const StackCard = ({ project, index, total }: StackCardProps) => {
   return (
     <div
       ref={ref}
-      className="sticky 
-        top-25
-        py-4"
+      className="sticky top-25 py-4"
       style={{ zIndex: index + 1 }}
     >
       <motion.div
         // href="#"
-        className="mx-auto
-          w-full
-          overflow-hidden
-          bg-white
-          shadow-[0_0_8px_rgba(0,0,0,0.08)]
-
-          grid
-          grid-cols-1
-          md:grid-cols-2
-
-          gap-5
-          md:gap-12
-
-          p-4
-          sm:p-6
-          md:p-4"
+        className="mx-auto w-full overflow-hidden bg-white shadow-[0_0_8px_rgba(0,0,0,0.08)] grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-12 p-4 sm:p-6 md:p-4"
         style={{
           scale,
           y,
@@ -70,7 +55,7 @@ const StackCard = ({ project, index, total }: StackCardProps) => {
           </div>
 
           {/* Text */}
-          <div className="flex flex-col gap-4 md:gap-6 w-full justify-center mt-0 sm:mt-20 xl:mt-0">
+          <div className="flex flex-col gap-4 md:gap-6 w-full justify-center mt-0 sm:mt-20 ">
             <h2 className="font-display font-bold text-[28px] sm:text-[36px] lg:text-[40px] xl:text-[50px] leading-[1.15]">
               {project.title}
             </h2>
@@ -93,11 +78,19 @@ const StackCard = ({ project, index, total }: StackCardProps) => {
         {/* Preview */}
         <div
           className="order-1 md:order-2 relative overflow-hidden min-h-55 sm:min-h-75 md:min-h-105"
-          style={{ background: project.bg }}
+          style={{ backgroundColor: project.bg }}
         >
-          <span className="absolute right-4 bottom-2 font-display font-bold text-[60px] lg:text-[110px] leading-none text-white/25 select-none">
+          <Image
+            src={project.img}
+            alt={typeof project.title === "string" ? project.title : `Project ${project.id}`}
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover object-center"
+            priority={index < 2}
+          />
+          {/* <span className="absolute right-4 bottom-2 font-display font-bold text-[60px] lg:text-[110px] leading-none text-white/25 select-none">
             {String(project.id).padStart(2, "0")}
-          </span>
+          </span> */}
         </div>
       </motion.div>
     </div>
