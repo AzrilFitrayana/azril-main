@@ -41,7 +41,7 @@ const Projects = () => {
                 </span>
               </div>
               <div className="flex flex-wrap gap-2 mt-10">
-                {p.tags.map((t) => (
+                {p.stack.map((t) => (
                   <span key={t} className="chip">
                     {t}
                   </span>

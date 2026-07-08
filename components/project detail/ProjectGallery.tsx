@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const images = ["/project/Group 1.jpg", "/project/Group 1.jpg", "/project/Group 1.jpg", "/project/Group 1.jpg",];
 
-export default function ProjectGallery() {
+export default function ProjectGallery({ images }: { images: string[] }) {
   return (
     <section id="gallery">
       <h2 className="section-title">Gallery</h2>

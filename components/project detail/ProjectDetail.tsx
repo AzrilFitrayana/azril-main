@@ -5,12 +5,14 @@ import ProjectGallery from "@/components/project detail/ProjectGallery";
 import ProjectSidebar from "@/components/project detail/ProjectSidebar";
 import ProjectLinks from "@/components/project detail/ProjectLinks";
 import ProjectResults from "@/components/project detail/ProjectResults";
+import ProjectFeatures from "@/components/project detail/ProjectFeatures";
 import OtherProjects from "@/components/project detail/OtherProjects";
 
 import { ArrowLeft } from "lucide-react";
 import { Project } from "@/types/types";
+import ProjectContribution from "./ProjectContribution";
 
-const ProjectDetail = async ({ project }: { project: Project }) => {
+const ProjectDetail = ({ project }: { project: Project }) => {
 
     console.log(project)
 
@@ -33,6 +35,7 @@ const ProjectDetail = async ({ project }: { project: Project }) => {
                 status={project.status}
                 statusColor={project.statusColor}
                 title={project.title}
+                category={project.category}
                 description={project.description}
                 role={project.role}
                 duration={project.duration}
@@ -46,40 +49,59 @@ const ProjectDetail = async ({ project }: { project: Project }) => {
                     <section id="overview">
                         <h2 className="section-title">Overview</h2>
                         <p className="body-text">
-                            SuperJob Recruiter was designed to bridge the gap between high-volume talent sourcing and meaningful human evaluation.
+                            {project.overview}
                         </p>
                     </section>
 
-                    <section id="problem">
-                        <h2 className="section-title">Problem</h2>
-                        <p className="body-text">
-                            Modern recruitment teams are drowning in manual tasks. The goal was creating a faster hiring workflow.
-                        </p>
+                    {project.problem && (
+                        <section id="problem">
+                            <h2 className="section-title">Problem</h2>
+                            <p className="body-text">
+                                {project.problem}
+                            </p>
 
-                        <blockquote
+                            {/* <blockquote
                             className="mt-4 shadow-sm border-l-4 border-[#AD2C00] bg-white p-8 rounded-r-xl font-serif italic text-xl"
-                        >
+                            >
                             The biggest challenge wasnt finding candidates, but managing the
                             noise.
-                        </blockquote>
-                    </section>
+                            </blockquote> */}
+                        </section>
+                    )}
 
-                    <section id="solution">
-                        <h2 className="section-title">Solution</h2>
-                        <p className="body-text">
-                            Modern recruitment teams are drowning in manual tasks. The goal was
-                            creating a faster hiring workflow.
-                        </p>
-                    </section>
+                    {project.solution && (
+                        <section id="solution">
+                            <h2 className="section-title">Solution</h2>
+                            <p className="body-text">
+                                {project.solution}
+                            </p>
+                        </section>
+                    )}
+
+                    {/* Features */}
+                    {project.features && project.features.length > 0 && (
+                        <ProjectFeatures features={project.features} />
+                    )}
+
+                    {/* Contribution */}
+                    {project.contribution && (
+                        <ProjectContribution contribution={project.contribution} />
+                    )}
 
                     {/* Result */}
-                    <ProjectResults />
+                    {project.results && (
+                        <ProjectResults results={project.results} />
+                    )}
 
                     {/* Gallery */}
-                    <ProjectGallery />
+                    {project.gallery && (
+                        <ProjectGallery images={project.gallery} />
+                    )}
 
                     {/* Link Reference */}
-                    <ProjectLinks />
+                    {project.links && (
+                        <ProjectLinks links={project.links} />
+                    )}
 
                     {/* Other Projects */}
                     <OtherProjects />
@@ -88,5 +110,4 @@ const ProjectDetail = async ({ project }: { project: Project }) => {
         </>
     )
 }
-
 export default ProjectDetail

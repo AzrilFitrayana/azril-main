@@ -1,25 +1,6 @@
-const results = [
-  {
-    number: "40%",
-    title: "Reduction in time-to-hire",
-    desc: "Achieved through automated candidate screening and scheduling workflow.",
-    progress: 40,
-  },
-  {
-    number: "10k+",
-    title: "Candidates processed",
-    desc: "Successful pilot handling thousands of resumes without downtime.",
-    progress: 75,
-  },
-  {
-    number: "98%",
-    title: "User satisfaction",
-    desc: "Hiring managers reported better experience using the platform.",
-    progress: 98,
-  },
-];
+import { ProjectResultProps } from "@/types/types";
 
-export default function ProjectResults() {
+export default function ProjectResults({ results }: { results: ProjectResultProps[] }) {
   return (
     <section id="results">
       <h2 className="section-title">Key Results</h2>

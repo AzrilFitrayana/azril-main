@@ -14,6 +14,7 @@ export type HeroProjectProps = Pick<
   Project,
   | "img"
   | "title"
+  | "category"
   | "status"
   | "statusColor"
   | "description"
@@ -26,13 +27,14 @@ export type Project = {
   slug: string;
   img: string;
   title: string;
+  category: string;
   status: string;
   statusColor: string;
   description: string;
   year: string;
   role: string;
   duration: string;
-  tags: string[];
+  stack: string[];
   overview: string;
   problem?: string;
   solution?: string;

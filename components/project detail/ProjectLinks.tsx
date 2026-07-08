@@ -1,13 +1,8 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { ProjectLinkProps } from "@/types/types";
 
-const links = [
-  { title: "Github Repository", url: "https://github.com" },
-  { title: "Live Website", url: "#" },
-  { title: "Company", url: "#" },
-];
-
-export default function ProjectLinks() {
+export default function ProjectLinks({ links }: { links: ProjectLinkProps[] }) {
   return (
     <section id="references">
       <h2 className="section-title">References</h2>
