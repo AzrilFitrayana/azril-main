@@ -4,8 +4,8 @@ interface ContributionProps {
 
 const ProjectContribution = ({ contribution }: ContributionProps) => {
     return (
-        <section className="space-y-8">
-            <div id="contribution">
+        <section id="contribution" className="space-y-8">
+            <div>
                 <h2 className="section-title">My Contribution</h2>
 
                 <div className="bg-white border border-[#E4E2DC] rounded-sm p-8 relative overflow-hidden">

@@ -14,7 +14,47 @@ import ProjectContribution from "./ProjectContribution";
 
 const ProjectDetail = ({ project }: { project: Project }) => {
 
-    console.log(project)
+    const menus = [
+        {
+            id: "overview",
+            label: "Overview",
+            show: true
+        },
+        {
+            id: "problem",
+            label: "Problem",
+            show: !!project.problem
+        },
+        {
+            id: "solution",
+            label: "Solution",
+            show: !!project.solution
+        },
+        {
+            id: "features",
+            label: "Features",
+            show:
+                !!project.features?.length
+        },
+        {
+            id: "contribution",
+            label: "Contribution",
+            show:
+                !!project.contribution
+        },
+        {
+            id: "results",
+            label: "Results",
+            show:
+                !!project.results?.length
+        },
+        {
+            id: "gallery",
+            label: "Gallery",
+            show:
+                !!project.gallery?.length
+        }
+    ].filter(item => item.show);
 
     return (
         <>
@@ -43,9 +83,9 @@ const ProjectDetail = ({ project }: { project: Project }) => {
             />
 
             <section className="max-w-6xl mx-auto px-6 py-20 grid grid-cols-[200px_1fr] gap-12 max-lg:grid-cols-1">
-                <ProjectSidebar />
+                <ProjectSidebar menus={menus} stack={project.stack} />
 
-                <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-20">
                     <section id="overview">
                         <h2 className="section-title">Overview</h2>
                         <p className="body-text">

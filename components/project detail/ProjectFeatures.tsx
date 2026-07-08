@@ -25,8 +25,8 @@ const FeatureCard = ({ feature, index }: { feature: string; index: number }) => 
 
 const ProjectFeatures = ({ features }: FeaturesProps) => {
   return (
-    <section className="space-y-8">
-      <div id="features">
+    <section className="space-y-8" id="features">
+      <div>
         <div>
           <h2 className="section-title">Key Features</h2>
         </div>

@@ -148,6 +148,10 @@
   body {
     @apply bg-background text-on-background font-body text-body-md antialiased;
   }
+
+  section[id] {
+    scroll-margin-top: 35vh;
+  }
 }
 
 @layer components {

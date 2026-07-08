@@ -2,16 +2,14 @@
 
 import { useEffect, useState } from "react";
 
-const menus = [
-  { id: "overview", label: "Overview" },
-  { id: "problem", label: "Problem" },
-  { id: "solution", label: "Solution" },
-  { id: "results", label: "Results" },
-  { id: "gallery", label: "Gallery" },
-];
+interface MenuProps {
+  id: string;
+  label: string;
+};
 
-export default function ProjectSidebar() {
-  const [active, setActive] = useState("overview");
+
+export default function ProjectSidebar({ menus, stack }: { menus: MenuProps[], stack: string[] }) {
+  const [active, setActive] = useState(menus[0]?.id);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -22,7 +20,10 @@ export default function ProjectSidebar() {
           }
         });
       },
-      { rootMargin: "-20% 0px -60% 0px" }
+      {
+        rootMargin: "-45% 0px -45% 0px",
+        threshold: 0,
+      }
     );
 
     menus.forEach((menu) => {
@@ -33,7 +34,7 @@ export default function ProjectSidebar() {
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [menus]);
 
   return (
     <aside className="sticky top-28 h-fit max-lg:hidden">
@@ -43,9 +44,9 @@ export default function ProjectSidebar() {
       </p>
 
       <div className="flex flex-wrap gap-4 mb-14">
-        {["Next.js", "TypeScript", "MongoDB"].map((item) => (
+        {stack.map((item, index) => (
           <span
-            key={item}
+            key={index}
             className="chip shadow-sm"
           >
             {item}
@@ -61,20 +62,18 @@ export default function ProjectSidebar() {
               href={`#${menu.id}`}
               className={`
                 flex items-center gap-2 text-[14px] transition
-                ${
-                  active === menu.id
-                    ? "text-[#AD2C00] font-semibold"
-                    : "text-neutral-400"
+                ${active === menu.id
+                  ? "text-[#AD2C00] font-semibold"
+                  : "text-neutral-400"
                 }
               `}
             >
               <span
                 className={`
                   h-0.75 rounded-full transition-all
-                  ${
-                    active === menu.id
-                      ? "w-8 bg-[#AD2C00]"
-                      : "w-5 bg-neutral-300"
+                  ${active === menu.id
+                    ? "w-8 bg-[#AD2C00]"
+                    : "w-5 bg-neutral-300"
                   }
                 `}
               />

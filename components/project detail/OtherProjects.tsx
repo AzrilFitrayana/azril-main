@@ -17,7 +17,7 @@ const projects = [
 
 export default function OtherProjects() {
   return (
-    <section className="mt-8">
+    <section>
       <h2 className="section-title">Other Projects</h2>
 
       <div className="mt-4 grid grid-cols-1 lg:grid-cols-2 gap-4">
