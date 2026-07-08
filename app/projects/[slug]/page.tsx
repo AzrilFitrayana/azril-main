@@ -10,8 +10,7 @@ import { use } from 'react'
 export default function PageProjectDetail({ params }: { params: Promise<{ slug: string }> }) {
     const { scrollYProgress } = useScroll()
     const { slug } = use(params)
-
-    console.log('slug', slug)
+    
     const project = projects.find((item) => item.slug === slug)
 
     if (!project) return notFound()

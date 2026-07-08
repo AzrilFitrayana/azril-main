@@ -10,7 +10,10 @@ import OtherProjects from "@/components/project detail/OtherProjects";
 import { ArrowLeft } from "lucide-react";
 import { Project } from "@/types/types";
 
-const ProjectDetail = ({ project }: { project: Project }) => {
+const ProjectDetail = async ({ project }: { project: Project }) => {
+
+    console.log(project)
+
     return (
         <>
             {/* Back */}
@@ -25,7 +28,16 @@ const ProjectDetail = ({ project }: { project: Project }) => {
             </div>
 
             {/* Hero */}
-            <ProjectHero />
+            <ProjectHero
+                img={project.img}
+                status={project.status}
+                statusColor={project.statusColor}
+                title={project.title}
+                description={project.description}
+                role={project.role}
+                duration={project.duration}
+                year={project.year}
+            />
 
             <section className="max-w-6xl mx-auto px-6 py-20 grid grid-cols-[200px_1fr] gap-12 max-lg:grid-cols-1">
                 <ProjectSidebar />

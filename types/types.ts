@@ -1,14 +1,26 @@
-export type ProjectResult = {
+export type ProjectResultProps = {
   number: string;
   title: string;
   desc: string;
   progress: number;
 };
 
-export type ProjectLink = {
+export type ProjectLinkProps = {
   title: string;
   url: string;
 };
+
+export type HeroProjectProps = Pick<
+  Project,
+  | "img"
+  | "title"
+  | "status"
+  | "statusColor"
+  | "description"
+  | "year"
+  | "role"
+  | "duration"
+>;
 
 export type Project = {
   slug: string;
@@ -16,19 +28,19 @@ export type Project = {
   title: string;
   status: string;
   statusColor: string;
-  tags: string[];
   description: string;
   year: string;
   role: string;
   duration: string;
+  tags: string[];
   overview: string;
   problem?: string;
   solution?: string;
   features?: string[];
   contribution?: string;
-  results?: ProjectResult[];
+  results?: ProjectResultProps[];
   gallery?: string[];
-  links?: ProjectLink[];
+  links?: ProjectLinkProps[];
 };
 
 export type Projects = Project[];
