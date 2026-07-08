@@ -225,4 +225,28 @@
   .input:focus {
     @apply border-2 border-outline px-[calc(1rem-1px)] py-[calc(0.625rem-1px)];
   }
+
+  .section-title {
+    @apply font-body font-bold text-lg mb-2;
+  }
+
+  .body-text {
+    @apply font-body text-[16px] leading-loose text-neutral-700;
+  }
+
+  .solution-card {
+    @apply bg-white border p-8;
+  }
+
+  .solution-card span {
+    @apply bg-black text-white px-3 py-2 text-sm;
+  }
+
+  .solution-card h3 {
+    @apply font-serif text-2xl mt-8 mb-3;
+  }
+
+  .solution-card p {
+    @apply text-neutral-600 leading-relaxed;
+  }
 }

@@ -4,6 +4,7 @@ import { Download, Pause, Play, Mail } from "lucide-react";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { useRef, useEffect } from "react";
+import Link from "next/link";
 
 interface VinylRecordProps {
   isPlaying: boolean;
@@ -42,7 +43,7 @@ const Hero = ({ isPlaying, onPlay, onPause }: VinylRecordProps) => {
               applications.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-center mt-6">
-              <a
+              <Link
                 href="https://drive.google.com/file/d/13EPdVyB3JRFH-ryl4F5L6oKE-9mIMbK1/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -55,8 +56,8 @@ const Hero = ({ isPlaying, onPlay, onPause }: VinylRecordProps) => {
                   className="align-middle"
                 />
                 <span className="leading-none">DOWNLOAD CV</span>
-              </a>
-              <a
+              </Link>
+              <Link
                 href="mailto:azrilfitrayana77@gmail.com"
                 className="w-full sm:w-auto bg-[#F9F9F9] text-[#1A1C1C] px-6 py-3 text-[12px] sm:text-[14px] font-medium font-display tracking-wider no-underline border border-[#8E7069] flex items-center justify-center gap-2 hover:-translate-y-0.5 active:translate-0 cursor-pointer transition-all"
               >
@@ -67,7 +68,7 @@ const Hero = ({ isPlaying, onPlay, onPause }: VinylRecordProps) => {
                   className="align-middle"
                 />
                 <span className="leading-none">azrilfitrayana77@gmail.com</span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
