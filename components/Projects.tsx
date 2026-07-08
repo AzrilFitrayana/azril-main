@@ -1,55 +1,13 @@
 "use client";
 
-import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+
+import { ArrowUpRight } from "lucide-react";
+import { projects } from "@/data/projects";
 
 const imgProject2 =
   "https://www.figma.com/api/mcp/asset/085a0af9-fffe-4798-8ad8-0286c96760cb";
-
-const projects = [
-  {
-    img: '/project/StaffFlow.png',
-    title: "StaffFlow",
-    status: "ARCHIVED",
-    statusColor: "#474746",
-    tags: ["Laravel", "MySQL"],
-  },
-  {
-    img: '/project/Group 1.jpg',
-    title: "DripAlert",
-    status: "STABLE",
-    statusColor: "#5B7CF0",
-    tags: ['IOT', 'ESP32', 'WhatsApp API'],
-  },
-  {
-    img: '/project/unify.jpg',
-    title: "Unify",
-    status: "ACTIVE",
-    statusColor: "#3AA86A",
-    tags: ["React.js", "Express.js", "PostgreSQL"],
-  },
-  {
-    img: '/project/unify.jpg',
-    title: "Shayna LMS",
-    status: "ACTIVE",
-    statusColor: "#3AA86A",
-    tags: ["React.js", "Express.js", "MongoDB"],
-  },
-  {
-    img: '/project/pomodoro.png',
-    title: "Pomodoro Timer",
-    status: "ACTIVE",
-    statusColor: "#3AA86A",
-    tags: ["HTML", "CSS", "Javascript"],
-  },
-  {
-    img: '/project/Group 1.jpg',
-    title: "Resume Checker",
-    status: "IN REVIEW",
-    statusColor: "#831F00",
-    tags: ["Next.js", "TypeScript"],
-  },
-];
 
 const Projects = () => {
   return (
@@ -63,7 +21,7 @@ const Projects = () => {
       {/* Card */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {projects.map((p, index) => (
-          <div key={index} className="group project-card-solid overflow-hidden cursor-pointer hover:-translate-y-0.5 transition-all ease-in-out duration-200 active:translate-y-0">
+          <Link href={`/projects/${p.slug}`} key={index} className="group project-card-solid overflow-hidden cursor-pointer hover:-translate-y-0.5 transition-all ease-in-out duration-200 active:translate-y-0">
             <div className="relative aspect-video bg-[#1A1C1C]">
               <Image src={p.img} alt={p.title} fill className="object-cover" />
               <span
@@ -90,7 +48,7 @@ const Projects = () => {
                 ))}
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>

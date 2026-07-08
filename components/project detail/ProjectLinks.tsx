@@ -15,7 +15,7 @@ export default function ProjectLinks() {
       <div className="flex flex-col gap-2 items-start">
         {links.map((item) => (
           <Link key={item.title} target="_blank"
-            rel="noopener noreferrer" href={item.url} className="flex items-center gap-1 font-body text-[16px] leading-loose font-bold tracking-wide underline underline-offset-4">{item.title} <ArrowUpRight width={18} height={18} /></Link>
+            rel="noopener noreferrer" href={item.url} className="flex items-center gap-1 font-body text-[14px] leading-loose font-bold tracking-wide underline underline-offset-4">{item.title} <ArrowUpRight width={16} height={16} /></Link>
 
           // <a
           // key={item.title}

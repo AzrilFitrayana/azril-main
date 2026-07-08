@@ -1,15 +1,18 @@
+import Link from "next/link";
+
 import ProjectHero from "@/components/project detail/ProjectHero";
 import ProjectGallery from "@/components/project detail/ProjectGallery";
 import ProjectSidebar from "@/components/project detail/ProjectSidebar";
 import ProjectLinks from "@/components/project detail/ProjectLinks";
 import ProjectResults from "@/components/project detail/ProjectResults";
+import OtherProjects from "@/components/project detail/OtherProjects";
 
-import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { Project } from "@/types/types";
 
-export default function ProjectDetail() {
+const ProjectDetail = ({ project }: { project: Project }) => {
     return (
-        <main className="min-h-screen bg-[#F9F9F9] text-[#1A1A1A]">
+        <>
             {/* Back */}
             <div className="max-w-6xl mx-auto px-6 pt-10">
                 <Link
@@ -36,37 +39,21 @@ export default function ProjectDetail() {
                     </section>
 
                     <section id="problem">
-                        <h2 className="section-title">The problem</h2>
+                        <h2 className="section-title">Problem</h2>
                         <p className="body-text">
                             Modern recruitment teams are drowning in manual tasks. The goal was creating a faster hiring workflow.
                         </p>
 
-                        {/* <blockquote
-                            className="
-                mt-10 border-l-4 border-[#AD2C00] bg-white p-8
-                rounded-r-xl font-serif italic text-xl
-              "
+                        <blockquote
+                            className="mt-4 shadow-sm border-l-4 border-[#AD2C00] bg-white p-8 rounded-r-xl font-serif italic text-xl"
                         >
                             The biggest challenge wasnt finding candidates, but managing the
                             noise.
-                        </blockquote> */}
+                        </blockquote>
                     </section>
 
                     <section id="solution">
                         <h2 className="section-title">Solution</h2>
-                        {/* <div className="grid md:grid-cols-2 gap-8">
-                            <div className="solution-card">
-                                <span>01</span>
-                                <h3>Unified dashboard</h3>
-                                <p>Manage jobs, candidates, and analytics in one place.</p>
-                            </div>
-
-                            <div className="solution-card">
-                                <span>02</span>
-                                <h3>Smart tracking</h3>
-                                <p>Kanban based recruitment workflow.</p>
-                            </div>
-                        </div> */}
                         <p className="body-text">
                             Modern recruitment teams are drowning in manual tasks. The goal was
                             creating a faster hiring workflow.
@@ -81,8 +68,13 @@ export default function ProjectDetail() {
 
                     {/* Link Reference */}
                     <ProjectLinks />
+
+                    {/* Other Projects */}
+                    <OtherProjects />
                 </div>
-            </section>s
-        </main>
-    );
+            </section>
+        </>
+    )
 }
+
+export default ProjectDetail

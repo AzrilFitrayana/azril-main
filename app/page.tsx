@@ -11,7 +11,7 @@ import TechStack from "@/components/homepage/TechStack";
 import Contact from "@/components/homepage/Contact";
 import ProjectsCard from "@/components/homepage/ProjectsCard";
 
-export default function Home() {
+export default function PageHome() {
   const [isPlaying, setIsPlaying] = useState(false)
   const { scrollYProgress } = useScroll()
 

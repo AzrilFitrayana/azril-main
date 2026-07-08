@@ -1,16 +1,17 @@
 "use client";
 
-import { useState } from "react";
 import { motion, useScroll } from "motion/react"
 import Projects from "@/components/Projects";
 
+interface ProjectsProps {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
 
-
-export default function Home() {
+export default function PageProjectList({}: ProjectsProps) {
     const { scrollYProgress } = useScroll()
 
     return (
-        <div className="min-h-screen bg-[#F9F9F9]">
+        <main className="min-h-screen bg-[#F9F9F9]">
             <motion.div id="scroll-indicator"
                 style={{
                     scaleX: scrollYProgress,
@@ -27,6 +28,6 @@ export default function Home() {
             <div className="w-full sm:max-w-370 sm:mx-auto px-4 2xl:px-0 pb-10">
                 <Projects />
             </div>
-        </div>
+        </main>
     );
 }

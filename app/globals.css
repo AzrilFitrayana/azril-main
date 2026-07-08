@@ -227,7 +227,7 @@
   }
 
   .section-title {
-    @apply font-body font-bold text-lg mb-2;
+    @apply font-body font-bold text-[16px] mb-2;
   }
 
   .body-text {

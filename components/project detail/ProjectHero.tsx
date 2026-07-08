@@ -29,7 +29,7 @@ export default function ProjectHero() {
                     <div className="flex items-center gap-3 mb-2 xl:mb-6">
                         <span className="size-3 rounded-full bg-[#AD2C00]" />
                         <span className="font-mono tracking-[0.25em] text-xs uppercase text-[12px] lg:text-[14px] text-neutral-400">
-                            Case Study
+                            Status
                         </span>
                     </div>
 
