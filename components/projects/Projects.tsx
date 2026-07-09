@@ -23,7 +23,7 @@ const Projects = () => {
         {projects.map((p, index) => (
           <Link href={`/projects/${p.slug}`} key={index} className="group project-card-solid overflow-hidden cursor-pointer hover:-translate-y-0.5 transition-all ease-in-out duration-200 active:translate-y-0">
             <div className="relative aspect-video bg-[#1A1C1C]">
-              <Image src={p.img} alt={p.title} fill className="object-cover" />
+              <Image src={p.img} alt={p.title} fill className="object-cover" sizes="(max-width: 768px) 100vw, 70vw" />
               <span
                 className="absolute top-4 right-4 text-white font-body text-[10px] font-bold uppercase px-3 py-1 rounded"
                 style={{ background: p.statusColor }}

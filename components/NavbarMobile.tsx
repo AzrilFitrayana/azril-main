@@ -1,74 +1,88 @@
-'use client'
+// components/NavbarMobile.tsx
 
-import { useState } from 'react'
-import { Menu, X } from 'lucide-react'
-import Link from 'next/link'
+"use client";
+
+import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { motion, AnimatePresence } from "motion/react";
 
 const NavbarMobile = () => {
-    const [isOpen, setIsOpen] = useState(false)
-    // const pathname = usePathname()
+    const [isOpen, setIsOpen] = useState(false);
+    const [time, setTime] = useState("");
+    const pathname = usePathname();
 
-    // const currentPath = pathname.split('/')[1]
+    const closeMenu = () => {
+        setIsOpen(false);
+    };
+
+    // Timezone: WIB Asia/Jakarta
+    useEffect(() => {
+        const update = () => {
+            const t = new Date().toLocaleTimeString("id-ID", {
+                hour: "2-digit",
+                minute: "2-digit",
+                timeZone: "Asia/Jakarta",
+            });
+            setTime(t);
+        };
+        update();
+        const id = setInterval(update, 30000);
+        return () => clearInterval(id);
+    }, []);
 
     return (
-        <nav className="fixed top-0 left-0 z-50 md:hidden flex justify-end items-center w-full h-16 pr-4">
-            <button
-                onClick={() => setIsOpen((prev) => !prev)}
-                className="flex justify-center items-center bg-white border dark:border-[#831F00] h-8 w-8"
-            >
-                {isOpen ? <X /> : <Menu />}
-            </button>
+        <nav className="fixed top-0 left-0 z-50 md:hidden w-full bg-[#F9F9F9] shadow-sm">
+            <div className="flex justify-between items-center h-16 px-4">
+                <span className="font-jetbrains text-[12px] font-medium tracking-wider text-[#AD2C00] border-2 border-[#AD2C00] px-4 py-2">
+                    {time} WIB
+                </span>
 
-
-            <ul
-                className={`
-                    absolute top-16 left-0 
-                    flex flex-col gap-4 
-                    p-8 w-full 
-                    bg-zinc-50 dark:bg-[#831F00] 
-                    text-primary dark:text-white 
-                    transition-all duration-500
-                    ${isOpen ? 'translate-y-0' : '-translate-y-96'}
-                `}
-            >
-                <li
+                <button
+                    onClick={() => setIsOpen((prev) => !prev)}
+                    className="flex justify-center items-center border-2 border-[#AD2C00] text-[#AD2C00] h-9 w-9"
                 >
-                    <Link
-                        onClick={() => setIsOpen(false)}
-                        href="#about"
-                        className={`text-lg `}
-                    >
-                        About
-                    </Link>
-                </li>
+                    {isOpen ? (<X size={20} />) : (<Menu size={20} />)}
+                </button>
+            </div>
 
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.ul
+                        initial={{ y: -20, opacity: 0, }}
+                        animate={{ y: 0, opacity: 1, }}
+                        exit={{ y: -20, opacity: 0, }}
+                        className="flex flex-col gap-6 p-6 bg-[#F9F9F9] font-jetbrains uppercase text-sm shadow-md">
+                        <li>
+                            <Link onClick={closeMenu} href={pathname === "/" ? "#about" : "/#about"} className="text-[#5F5E5E]">
+                                About
+                            </Link>
+                        </li>
 
-                <li
+                        <li>
+                            <Link onClick={closeMenu} href={pathname === "/" ? "#projects" : "/#projects"} className={pathname.startsWith("/projects") ? "text-[#AD2C00] font-bold" : "text-[#5F5E5E]"}>
+                                Projects
+                            </Link>
+                        </li>
 
-                >
-                    <Link
-                        onClick={() => setIsOpen(false)}
-                        href="#projects"
-                        className={`text-lg `}
-                    >
-                        Projects
-                    </Link>
-                </li>
+                        <li>
+                            <Link onClick={closeMenu} href={pathname === "/" ? "#contactsocial" : "/#contactsocial"} className="text-[#5F5E5E]">
+                                Contact & Social
+                            </Link>
+                        </li>
 
-
-                <li
-                >
-                    <Link
-                        onClick={() => setIsOpen(false)}
-                        href="#contactsocial"
-                        className={`text-lg `}
-                    >
-                        Contact & Socials
-                    </Link>
-                </li>
-            </ul>
+                        <li>
+                            <Link onClick={closeMenu} href="https://drive.google.com/file/d/13EPdVyB3JRFH-ryl4F5L6oKE-9mIMbK1/view?usp=sharing" target="_blank" className="w-full inline-block bg-[#AD2C00]  text-white px-5 py-3">
+                                Resume
+                            </Link>
+                        </li>
+                    </motion.ul>
+                )}
+            </AnimatePresence>
         </nav>
-    )
-}
+    );
+};
 
-export default NavbarMobile
+
+export default NavbarMobile;

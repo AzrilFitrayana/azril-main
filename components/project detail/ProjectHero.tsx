@@ -22,6 +22,7 @@ export default function ProjectHero({ img, status, statusColor, title, descripti
                         alt={title}
                         fill
                         priority
+                        sizes="(max-width: 768px) 100vw, 50vw"
                         className="object-cover"
                     />
                 </div>

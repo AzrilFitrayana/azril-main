@@ -3,12 +3,18 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "motion/react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+
 
 const Navbar = () => {
   const [time, setTime] = useState("");
   const [showNavbar, setShowNavbar] = useState(true);
   const [activeSection, setActiveSection] = useState('')
   const lastScrollY = useRef(0)
+  const pathname = usePathname();
+
+  console.log(pathname)
 
   // Hide show navbar when scroll down and show when scroll up
   useEffect(() => {
@@ -75,33 +81,35 @@ const Navbar = () => {
 
   // Deteksi section aktif
   useEffect(() => {
-    const sections = document.querySelectorAll('section')
+    if (pathname !== "/") return;
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
+    const sections = document.querySelectorAll("section");
 
-        // Ketika section terlihat
-        console.log(entry)
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id)
-        }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
 
-      });
-    }, {
-      rootMargin: "-45% 0px -45% 0px",
-      threshold: 0, // Section aktif ketika 50% section terlihat.
-    })
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+
+        });
+      },
+      {
+        rootMargin: "-45% 0px -45% 0px",
+        threshold: 0,
+      }
+    );
 
     sections.forEach((section) => {
-      observer.observe(section)
-    })
+      observer.observe(section);
+    });
 
     return () => {
-      sections.forEach((section) => {
-        observer.unobserve(section)
-      })
-    }
-  }, [])
+      observer.disconnect();
+    };
+
+  }, [pathname]);
 
   return (
     <motion.nav
@@ -112,27 +120,41 @@ const Navbar = () => {
           {time} WIB
         </span>
 
+
         <ul className="flex items-center gap-6 gap-x-11 font-jetbrains text-[12px] font-medium tracking-wider uppercase text-[#5F5E5E]">
           <li>
-            <Link href="#about" className={activeSection == 'about' ? 'text-[#AD2C00] font-extrabold' : 'text-[#5F5E5E]'}>About</Link>
+            <Link href={pathname === "/" ? "#about" : "/#about"} className={pathname === "/" && activeSection === "about" ? 'text-[#AD2C00] font-extrabold' : 'text-[#5F5E5E]'}>About</Link>
           </li>
           <li>
-            <Link href="#projects" className={activeSection == 'projects' ? 'text-[#AD2C00] font-extrabold' : 'text-[#5F5E5E]'}>Project</Link>
+            <Link
+              href={pathname === "/" ? "#projects" : "/#projects"}
+              className={
+                pathname.startsWith("/projects") ||
+                  (pathname === "/" && activeSection === "projects")
+                  ? "text-[#AD2C00] font-extrabold"
+                  : "text-[#5F5E5E]"
+              }
+            >
+              Projects
+            </Link>
           </li>
           <li>
-            <Link href="#contactsocial" className={activeSection == 'contactsocial' ? 'text-[#AD2C00] font-extrabold' : 'text-[#5F5E5E]'}>Contact & Social</Link>
+            <Link href={
+              pathname === "/" ? "#contactsocial" : "/#contactsocial"}
+              className={pathname === "/" && activeSection === "contactsocial" ? 'text-[#AD2C00] font-extrabold' : 'text-[#5F5E5E]'}>Contact & Social</Link>
           </li>
           <li>
-            <a
+            <Link
               href="https://drive.google.com/file/d/13EPdVyB3JRFH-ryl4F5L6oKE-9mIMbK1/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="font-jetbrains text-[12px] font-medium tracking-wider uppercase px-4 py-2 text-white bg-[#AD2C00] hover:-translate-y-0.5 active:translate-0 cursor-pointer transition-all"
             >
               Resume
-            </a>
+            </Link>
           </li>
         </ul>
+
       </div>
     </motion.nav>
   );

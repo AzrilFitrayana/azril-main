@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll } from "motion/react"
-import Projects from "@/components/Projects";
+import Projects from "@/components/projects/Projects";
 
 interface ProjectsProps {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;

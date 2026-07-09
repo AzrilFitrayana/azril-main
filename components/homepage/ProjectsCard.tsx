@@ -5,37 +5,7 @@ import StackCard from "../StackCard";
 import { useRef, useState } from "react";
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import Link from "next/link";
-
-const projects = [
-  {
-    id: 1,
-    category: "EMPLOYEE MANAGEMENT SYSTEM · 2024",
-    tag: "FULLSTACK DEVELOPMENT",
-    stack: ["Laravel", "MYSQL"],
-    title: (
-      <>
-        StaffFlow
-      </>
-    ),
-    desc: " Team management tool that turns scattered spreadsheets into one live dashboard — attendance, leave, and payroll updating in real time.",
-    bg: "#F0C93B",
-    img: "/project/StaffFlow.png"
-  },
-  {
-    id: 2,
-    category: "IoT Monitoring System · 2025",
-    tag: "IoT / EMBEDDED SYSTEMS",
-    stack: ["IOT", "ESP32", "WhatsApp API"],
-    title: (
-      <>
-        DripAlert
-      </>
-    ),
-    desc: " A smart IV monitoring device that detects blocked or depleted drips before nurses do — automatic WhatsApp alerts via optocoupler and load cell sensing, no manual bedside checks required.",
-    bg: "#3E8E5B",
-    img: "/project/Group 1.jpg"
-  },
-];
+import { projects } from "@/data/projects";
 
 const ProjectsCard = () => {
   const titleRef = useRef(null);
@@ -51,6 +21,8 @@ const ProjectsCard = () => {
   useMotionValueEvent(scrollYProgress, "change", (v) => {
     setHeadingHidden(v > HIDE_THRESHOLD);
   });
+
+  const highlightProjects = projects.filter((project) => project.slug === 'staffflow' || project.slug === 'dripalert')
 
   return (
     <section ref={titleRef} id="projects" className="mt-4 px-4 sm:px-0">
@@ -74,9 +46,9 @@ const ProjectsCard = () => {
       </div>
 
       <div>
-        {projects.map((project, index) => (
+        {highlightProjects.map((project, index) => (
           <StackCard
-            key={project.id}
+            key={index}
             project={project}
             index={index}
             total={projects.length}

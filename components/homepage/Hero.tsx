@@ -18,7 +18,7 @@ const Hero = ({ isPlaying, onPlay, onPause }: VinylRecordProps) => {
   useEffect(() => {
     if (audioRef.current) {
       if (isPlaying) {
-        audioRef.current.play().catch(() => {});
+        audioRef.current.play().catch(() => { });
       } else {
         audioRef.current.pause();
       }
@@ -81,15 +81,15 @@ const Hero = ({ isPlaying, onPlay, onPause }: VinylRecordProps) => {
               transition={{
                 rotate: isPlaying
                   ? {
-                      duration: 1.8,
-                      repeat: Infinity,
-                      ease: "linear",
-                      repeatType: "loop",
-                    }
+                    duration: 1.8,
+                    repeat: Infinity,
+                    ease: "linear",
+                    repeatType: "loop",
+                  }
                   : {
-                      duration: 0,
-                      ease: "linear",
-                    },
+                    duration: 0,
+                    ease: "linear",
+                  },
               }}
               className="absolute top-0 -right-10"
             >
@@ -99,6 +99,7 @@ const Hero = ({ isPlaying, onPlay, onPause }: VinylRecordProps) => {
                 width={400}
                 height={400}
                 className="block max-w-72.5 lg:max-w-80 xl:max-w-102.5 h-auto mx-auto"
+                sizes="(max-width: 768px) 100vw, 70vw"
               />
             </motion.div>
           </div>
@@ -126,6 +127,7 @@ const Hero = ({ isPlaying, onPlay, onPause }: VinylRecordProps) => {
               width={334}
               height={334}
               className="block max-w-60 sm:max-w-70 xl:max-w-102.5"
+              sizes="(max-width: 768px) 100vw, 70vw"
             />
           </motion.div>
 
