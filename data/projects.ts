@@ -118,7 +118,7 @@ export const projects: Projects = [
   },
   {
     slug: "unify",
-    img: "/project/unify.jpg",
+    img: "/project/Unify.jpg",
     title: "Unify",
     category: "University Management Platform · 2026",
     status: "ACTIVE",
@@ -155,7 +155,7 @@ export const projects: Projects = [
   },
   {
     slug: "shayna-lms",
-    img: "/project/unify.jpg",
+    img: "/project/LMS.jpg",
     title: "Shayna LMS",
     category: "Learning Management System",
     status: "ACTIVE",
