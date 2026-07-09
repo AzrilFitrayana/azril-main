@@ -13,7 +13,7 @@ const Projects = () => {
   return (
     <section id="projects" className="mt-4">
       <div className="flex items-center justify-between mb-4">
-        <div className="flex items-center gap-3 font-mono text-[24px] font-extrabold uppercase tracking-widest">
+        <div className="flex items-center gap-3 font-mono text-[24px] font-extrabold uppercase tracking-wider">
           All Project
         </div>
       </div>
@@ -33,7 +33,7 @@ const Projects = () => {
             </div>
             <div className="p-6 mb-4">
               <div className="flex items-center justify-between mb-2">
-                <h3 className="font-display text-[24px] font-bold text-[#1A1C1C]">
+                <h3 className="font-display text-[24px] tracking-wide font-bold text-[#1A1C1C]">
                   {p.title}
                 </h3>
                 <span className="text-sm text-[#5F5E5E] group-hover:text-[#831F00] group-hover:-translate-y-0.5 transition-all ease-in-out duration-200">
