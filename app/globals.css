@@ -145,6 +145,10 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-on-background font-body text-body-md antialiased;
   }
