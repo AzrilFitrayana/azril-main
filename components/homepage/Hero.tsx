@@ -100,6 +100,7 @@ const Hero = ({ isPlaying, onPlay, onPause }: VinylRecordProps) => {
                 height={400}
                 quality={75}
                 fetchPriority="high"
+                loading="eager"
                 className="block max-w-72.5 lg:max-w-80 xl:max-w-102.5 h-auto mx-auto"
                 sizes="(min-width: 1280px) 410px, (min-width: 1024px) 320px, 290px"
               />
