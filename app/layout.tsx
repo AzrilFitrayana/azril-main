@@ -1,6 +1,6 @@
+import "./globals.css";
 import type { Metadata } from "next";
 import { Hanken_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
-import "./globals.css";
 import Navbar from "@/components/Navbar";
 import ScrollWrapper from "@/components/ScrollWrapper";
 import Footer from "@/components/Footer";

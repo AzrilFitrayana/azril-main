@@ -36,7 +36,7 @@ const Experience = () => {
         <span className="block w-8 h-px bg-[#AD2C00]" />
         02. Experience
       </div>
-      <div className="bento-card-solid mt-4 p-10 grid grid-cols-1 md:grid-cols-[320px_1fr] gap-10">
+      <div className="bento-card-solid mt-4 p-10 grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-10">
         {/* Left */}
         <div className="flex flex-col gap-6">
           <div className="flex items-center gap-3">

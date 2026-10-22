@@ -18,7 +18,7 @@ const Hero = ({ isPlaying, onPlay, onPause }: VinylRecordProps) => {
   useEffect(() => {
     if (audioRef.current) {
       if (isPlaying) {
-        audioRef.current.play().catch(() => { });
+        audioRef.current.play().catch(() => {});
       } else {
         audioRef.current.pause();
       }
@@ -81,15 +81,15 @@ const Hero = ({ isPlaying, onPlay, onPause }: VinylRecordProps) => {
               transition={{
                 rotate: isPlaying
                   ? {
-                    duration: 1.8,
-                    repeat: Infinity,
-                    ease: "linear",
-                    repeatType: "loop",
-                  }
+                      duration: 1.8,
+                      repeat: Infinity,
+                      ease: "linear",
+                      repeatType: "loop",
+                    }
                   : {
-                    duration: 0,
-                    ease: "linear",
-                  },
+                      duration: 0,
+                      ease: "linear",
+                    },
               }}
               className="absolute top-0 -right-10"
             >
@@ -98,14 +98,16 @@ const Hero = ({ isPlaying, onPlay, onPause }: VinylRecordProps) => {
                 alt="Vinyl Record"
                 width={400}
                 height={400}
+                quality={75}
+                priority
                 className="block max-w-72.5 lg:max-w-80 xl:max-w-102.5 h-auto mx-auto"
-                sizes="(max-width: 768px) 100vw, 70vw"
+                sizes="(min-width: 1280px) 410px, (min-width: 1024px) 320px, 290px"
               />
             </motion.div>
           </div>
 
           <motion.div
-            className="absolute top-0 left-8 lg:-left-19 lg:top-5 xl:top-2 xl:-left-6  cursor-pointer"
+            className="absolute top-0 left-8 md:left-90 md:-top-6 lg:-left-19 lg:top-5 xl:top-2 xl:-left-6  cursor-pointer"
             style={{
               transformOrigin: "80% 20%",
               filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.2))",
@@ -126,8 +128,9 @@ const Hero = ({ isPlaying, onPlay, onPause }: VinylRecordProps) => {
               alt="Tonearm"
               width={334}
               height={334}
-              className="block max-w-60 sm:max-w-70 xl:max-w-102.5"
-              sizes="(max-width: 768px) 100vw, 70vw"
+              quality={75}
+              className="block max-w-60 sm:max-w-70 xl:max-w-102.5 h-auto"
+              sizes="(min-width: 1280px) 410px, (min-width: 640px) 280px, 240px"
             />
           </motion.div>
 

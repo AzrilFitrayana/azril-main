@@ -33,7 +33,7 @@ export type Project = {
   description: string;
   year: string;
   role: string;
-  duration: string;
+  duration?: string;
   stack: string[];
   overview: string;
   problem?: string;

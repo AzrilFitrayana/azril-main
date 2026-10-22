@@ -85,7 +85,7 @@ const ProjectDetail = ({ project }: { project: Project }) => {
             <section className="max-w-6xl mx-auto px-6 py-20 grid grid-cols-[200px_1fr] gap-12 max-lg:grid-cols-1">
                 <ProjectSidebar menus={menus} stack={project.stack} />
 
-                <div className="flex flex-col gap-20">
+                <article className="flex flex-col gap-20">
                     <section id="overview">
                         <h2 className="section-title">Overview</h2>
                         <p className="body-text">
@@ -145,7 +145,7 @@ const ProjectDetail = ({ project }: { project: Project }) => {
 
                     {/* Other Projects */}
                     <OtherProjects />
-                </div>
+                </article>
             </section>
         </>
     )

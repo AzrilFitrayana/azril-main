@@ -1,6 +1,84 @@
 import type { Projects } from "@/types/types";
 
 export const projects: Projects = [
+    {
+    slug: "spendfy",
+    img: "/project/spendfy/landingPage.jpg",
+    title: "Spendfy",
+    category: "AI-Powered Expense Tracker",
+    status: "ARCHIVED",
+    statusColor: "#474746",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Express.js",
+      "PostgreSQL",
+      "Neon",
+      "Google Gemini API",
+      "Tailwind CSS",
+    ],
+    description:
+      "An AI-powered personal finance application that helps users manage transactions, track spending, set budgets, and gain financial insights.",
+    year: "2026",
+    role: "Full Stack Developer",
+    overview:
+      "Spendfy is a personal finance application designed to simplify expense tracking and financial management. Built with a modern web stack, the application combines a Next.js frontend with an Express.js and TypeScript backend, using Neon-hosted PostgreSQL for persistent data storage and Google Gemini for AI-powered financial insights.",
+    problem:
+      "Tracking personal finances manually makes it difficult to maintain organized transaction records, monitor spending habits, manage budgets, and understand monthly financial performance.",
+    solution:
+      "Developed a full-stack expense tracking application with a structured relational database, JWT-based authentication, transaction and category management, budget tracking, financial summaries, and AI integration to help users better understand their financial activity.",
+    features: [
+      "User authentication using JSON Web Tokens (JWT).",
+      "Transaction management for recording and organizing income and expenses.",
+      "Category management for classifying financial transactions.",
+      "Budget management for organizing and monitoring spending limits.",
+      "Financial summary endpoints for aggregating monthly income and expenses.",
+      "AI-powered financial insights using the Google Gemini API.",
+      "Relational database design using PostgreSQL hosted on Neon.",
+      "REST API development using Express.js and TypeScript.",
+    ],
+    contribution:
+      "Designed and developed the application across the frontend and backend. Implemented REST API endpoints, authentication and authorization workflows, PostgreSQL database integration, transaction and budget management logic, financial summary queries, and integration with the Google Gemini API for AI-powered features.",
+    results: [
+      {
+        number: "2",
+        title: "Application Layers",
+        desc: "Structured the project into frontend and backend applications to separate the user interface from business logic and API services.",
+        progress: 100,
+      },
+      {
+        number: "REST",
+        title: "API Architecture",
+        desc: "Implemented backend endpoints for authentication and personal finance management using Express.js and TypeScript.",
+        progress: 100,
+      },
+      {
+        number: "AI",
+        title: "Financial Insights",
+        desc: "Integrated Google Gemini API to support AI-powered financial analysis and insights.",
+        progress: 80,
+      },
+    ],
+    gallery: [
+      "/project/spendfy/landingPage.jpg",
+      "/project/spendfy/login.jpg",
+      "/project/spendfy/dashboard.jpg",
+      "/project/spendfy/transaction.jpg",
+      "/project/spendfy/categories.jpg",
+      "/project/spendfy/budget.jpg",
+      "/project/spendfy/insight.jpg"
+    ],
+    links: [
+      {
+        title: "GitHub",
+        url: "https://github.com/AzrilFitrayana",
+      },
+      {
+        title: "GitHub Repository",
+        url: "https://github.com/AzrilFitrayana/Spendfy",
+      },
+    ],
+  },
   {
     slug: "staffflow",
     img: "/project/StaffFlow.png",
@@ -222,23 +300,5 @@ export const projects: Projects = [
       },
     ],
   },
-  //   {
-  //     slug: "resume-checker",
-  //     img: "/project/Group 1.jpg",
-  //     title: "Resume Checker",
-  //     status: "IN REVIEW",
-  //     statusColor: "#831F00",
-  //     stack: ["Next.js", "TypeScript"],
-  //     description:
-  //       "An AI-assisted tool that scores resumes against a job description and suggests improvements.",
-  //     year: "2026",
-  //     role: "Frontend",
-  //     duration: "1 Month",
-  //     overview:
-  //       "Resume Checker gives instant, actionable feedback so candidates can tailor applications with confidence.",
-  //     links: [
-  //       { title: "Github Repository", url: "https://github.com" },
-  //       { title: "Live Website", url: "#" },
-  //     ],
-  //   },
+  
 ];

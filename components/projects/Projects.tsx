@@ -19,7 +19,7 @@ const Projects = () => {
       </div>
 
       {/* Card */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <article className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {projects.map((p, index) => (
           <Link href={`/projects/${p.slug}`} key={index} className="group project-card-solid overflow-hidden cursor-pointer hover:-translate-y-0.5 transition-all ease-in-out duration-200 active:translate-y-0">
             <div className="relative aspect-video bg-[#1A1C1C]">
@@ -50,7 +50,7 @@ const Projects = () => {
             </div>
           </Link>
         ))}
-      </div>
+      </article>
     </section>
   );
 };
