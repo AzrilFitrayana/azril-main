@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "motion/react";
 
 const NavbarMobile = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -41,19 +40,17 @@ const NavbarMobile = () => {
 
                 <button
                     onClick={() => setIsOpen((prev) => !prev)}
+                                    aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+                                    aria-expanded={isOpen}
                     className="flex justify-center items-center border-2 border-[#AD2C00] text-[#AD2C00] h-9 w-9"
                 >
                     {isOpen ? (<X size={20} />) : (<Menu size={20} />)}
                 </button>
             </div>
 
-            <AnimatePresence>
-                {isOpen && (
-                    <motion.ul
-                        initial={{ y: -20, opacity: 0, }}
-                        animate={{ y: 0, opacity: 1, }}
-                        exit={{ y: -20, opacity: 0, }}
-                        className="flex flex-col gap-6 p-6 bg-[#F9F9F9] font-jetbrains uppercase text-sm shadow-md">
+            {isOpen && (
+                    <ul
+                        className="flex flex-col gap-6 p-6 bg-[#F9F9F9] font-jetbrains uppercase text-sm shadow-md animate-[mobile-menu-enter_180ms_ease-out]">
                         <li>
                             <Link onClick={closeMenu} href={pathname === "/" ? "#about" : "/#about"} className="text-[#5F5E5E]">
                                 About
@@ -77,9 +74,8 @@ const NavbarMobile = () => {
                                 Resume
                             </Link>
                         </li>
-                    </motion.ul>
+                    </ul>
                 )}
-            </AnimatePresence>
         </nav>
     );
 };

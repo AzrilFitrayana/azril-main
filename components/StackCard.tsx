@@ -1,10 +1,6 @@
-"use client";
-
 import Image from "next/image";
 
 import Link from "next/link";
-import { motion, useScroll, useTransform } from "motion/react";
-import { useRef } from "react";
 import { Project } from "@/types/types";
 
 interface StackCardProps {
@@ -13,39 +9,23 @@ interface StackCardProps {
   total: number;
 }
 
-const MotionLink = motion(Link);
-
 const StackCard = ({ project, index, total }: StackCardProps) => {
-  const ref = useRef(null);
   void total;
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.92]);
-  const y = useTransform(scrollYProgress, [0, 1], [0, -24]);
 
   return (
     <div
-      ref={ref}
       className="sticky top-25 py-4"
       style={{ zIndex: index + 1 }}
     >
-      <MotionLink
+      <Link
         href={`/projects/${project.slug}`}
         className="mx-auto w-full overflow-hidden bg-white shadow-[0_0_8px_rgba(0,0,0,0.08)] grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-12 p-4 sm:p-6 md:p-4"
-        style={{
-          scale,
-          y,
-        }}
       >
         {/* Content */}
         <div className="relative p-4 sm:p-6 pb-16 sm:pb-20 md:pb-16 order-2 md:order-1">
 
           {/* Meta */}
-          <div className="flex flex-wrap justify-between gap-x-4 gap-y-1 font-mono text-[10px] font-medium text-[#8a8a8a] uppercase tracking-wider mb-6 md:mb-9">
+          <div className="flex flex-wrap justify-between gap-x-4 gap-y-1 font-mono text-[10px] font-medium text-[#595959] uppercase tracking-wider mb-6 md:mb-9">
             <span>{project.category}</span>
             <span>{project.year}</span>
           </div>
@@ -56,7 +36,7 @@ const StackCard = ({ project, index, total }: StackCardProps) => {
               {project.title}
             </h2>
 
-            <p className="text-[#8a8a8a] text-[10px] sm:text-[12px] xl:text-[14px] max-w-full md:max-w-95 leading-[1.6] md:leading-[1.7]">
+            <p className="text-[#595959] text-[10px] sm:text-[12px] xl:text-[14px] max-w-full md:max-w-95 leading-[1.6] md:leading-[1.7]">
               {project.description}
             </p>
           </div>
@@ -81,13 +61,14 @@ const StackCard = ({ project, index, total }: StackCardProps) => {
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover object-center"
-            priority={index < 2}
+            quality={65}
+            loading="lazy"
           />
           {/* <span className="absolute right-4 bottom-2 font-display font-bold text-[60px] lg:text-[110px] leading-none text-white/25 select-none">
             {String(project.id).padStart(2, "0")}
           </span> */}
         </div>
-      </MotionLink>
+      </Link>
     </div>
   );
 };

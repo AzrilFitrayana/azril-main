@@ -1,5 +1,3 @@
-"use client";
-
 import { Download, History } from "lucide-react";
 
 const items = [
@@ -32,10 +30,10 @@ const items = [
 const Experience = () => {
   return (
     <section id="experience" className="mt-4">
-      <div className="flex items-center gap-3 font-mono text-[12px] font-medium text-[#AD2C00] uppercase tracking-widest">
+      <h2 className="flex items-center gap-3 font-mono text-[12px] font-medium text-[#AD2C00] uppercase tracking-widest">
         <span className="block w-8 h-px bg-[#AD2C00]" />
         02. Experience
-      </div>
+      </h2>
       <div className="bento-card-solid mt-4 p-10 grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-10">
         {/* Left */}
         <div className="flex flex-col gap-6">
@@ -88,7 +86,7 @@ const Experience = () => {
                   {item.role}
                 </div>
                 <div
-                  className={`font-body text-[14px] text-[#8a8a8a] leading-5`}
+                    className="font-body text-[14px] text-[#595959] leading-5"
                 >
                   {item.desc}
                 </div>

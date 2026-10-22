@@ -1,5 +1,3 @@
-"use client";
-
 const TechTicker = () => {
   const techs = [
     "REACT.JS",

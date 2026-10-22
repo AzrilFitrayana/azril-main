@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { motion } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -13,8 +12,6 @@ const Navbar = () => {
   const [activeSection, setActiveSection] = useState('')
   const lastScrollY = useRef(0)
   const pathname = usePathname();
-
-  console.log(pathname)
 
   // Hide show navbar when scroll down and show when scroll up
   useEffect(() => {
@@ -112,7 +109,7 @@ const Navbar = () => {
   }, [pathname]);
 
   return (
-    <motion.nav
+    <nav
       className={`hidden md:flex py-5 px-4 2xl:px-0 fixed top-0 left-0 right-0 z-50 font-jetbrains text-[12px] font-medium tracking-wider bg-[#F9F9F9] shadow-sm transition-transform duration-300 ${showNavbar ? 'translate-y-0' : '-translate-y-full'}`}
     >
       <div className="container w-full flex items-center justify-between mx-auto">
@@ -156,7 +153,7 @@ const Navbar = () => {
         </ul>
 
       </div>
-    </motion.nav>
+    </nav>
   );
 };
 

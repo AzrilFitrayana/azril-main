@@ -2,18 +2,15 @@
 
 import { Download, Pause, Play, Mail } from "lucide-react";
 import Image from "next/image";
-import { motion } from "motion/react";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 
-interface VinylRecordProps {
-  isPlaying: boolean;
-  onPlay: () => void;
-  onPause: () => void;
-}
-
-const Hero = ({ isPlaying, onPlay, onPause }: VinylRecordProps) => {
+const Hero = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
+
+  const onPlay = () => setIsPlaying(true);
+  const onPause = () => setIsPlaying(false);
 
   useEffect(() => {
     if (audioRef.current) {
@@ -76,22 +73,8 @@ const Hero = ({ isPlaying, onPlay, onPause }: VinylRecordProps) => {
         {/* Profile / Vinyl Card */}
         <div className="bg-[#F9F9F9] border border-[#E2E2E2] shadow-bento flex flex-col justify-center relative overflow-hidden max-h-none md:max-h-120">
           <div className="relative w-full h-70 sm:h-90 md:h-102.5">
-            <motion.div
-              animate={{ rotate: isPlaying ? 360 : 0 }}
-              transition={{
-                rotate: isPlaying
-                  ? {
-                      duration: 1.8,
-                      repeat: Infinity,
-                      ease: "linear",
-                      repeatType: "loop",
-                    }
-                  : {
-                      duration: 0,
-                      ease: "linear",
-                    },
-              }}
-              className="absolute top-0 -right-10"
+            <div
+              className={`absolute top-0 -right-10 ${isPlaying ? "animate-[spin_1.8s_linear_infinite]" : ""}`}
             >
               <Image
                 src="/home page/vinyl2.png"
@@ -104,24 +87,14 @@ const Hero = ({ isPlaying, onPlay, onPause }: VinylRecordProps) => {
                 className="block max-w-72.5 lg:max-w-80 xl:max-w-102.5 h-auto mx-auto"
                 sizes="(min-width: 1280px) 410px, (min-width: 1024px) 320px, 290px"
               />
-            </motion.div>
+            </div>
           </div>
 
-          <motion.div
-            className="absolute top-0 left-8 md:left-90 md:-top-6 lg:-left-19 lg:top-5 xl:top-2 xl:-left-6  cursor-pointer"
-            style={{
-              transformOrigin: "80% 20%",
-              filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.2))",
-            }}
-            animate={{
-              rotate: isPlaying ? -10 : 0,
-              y: isPlaying ? 0 : 2,
-            }}
-            transition={{
-              duration: 0.7,
-              ease: [0.4, 0, 0.2, 1],
-              y: { duration: 0.25 },
-            }}
+          <button
+            type="button"
+            aria-label={isPlaying ? "Pause music" : "Play music"}
+            aria-pressed={isPlaying}
+            className={`absolute top-0 left-8 md:left-90 md:-top-6 lg:-left-19 lg:top-5 xl:top-2 xl:-left-6 cursor-pointer border-0 bg-transparent p-0 transition-transform duration-700 ease-out origin-[80%_20%] drop-shadow-[0_4px_12px_rgba(0,0,0,0.2)] ${isPlaying ? "-rotate-10 translate-y-0" : "rotate-0 translate-y-0.5"}`}
             onClick={isPlaying ? onPause : onPlay}
           >
             <Image
@@ -133,7 +106,7 @@ const Hero = ({ isPlaying, onPlay, onPause }: VinylRecordProps) => {
               className="block max-w-60 sm:max-w-70 xl:max-w-102.5 h-auto"
               sizes="(min-width: 1280px) 410px, (min-width: 640px) 280px, 240px"
             />
-          </motion.div>
+          </button>
 
           {/* Now playing label */}
           <div className="absolute bottom-4 left-4 right-4 lg:bottom-12 xl:bottom-12 xl:left-6 xl:right-auto bg-[rgba(249,249,249,0.8)] backdrop-blur-[2px] border border-[#E2BFB6] rounded-2xl p-3 xl:p-3.5 w-auto xl:w-79 shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
@@ -144,12 +117,16 @@ const Hero = ({ isPlaying, onPlay, onPause }: VinylRecordProps) => {
               <div className="flex gap-2 shrink-0">
                 <button
                   onClick={onPlay}
+                  aria-label="Play music"
+                  aria-pressed={isPlaying}
                   className="w-7 h-7 rounded-full bg-[#831F00] border-none text-white flex items-center justify-center hover:-translate-y-0.5 active:translate-0 cursor-pointer transition-all"
                 >
                   <Play strokeWidth={2.5} width={14} height={14} />
                 </button>
                 <button
                   onClick={onPause}
+                  aria-label="Pause music"
+                  aria-pressed={!isPlaying}
                   className="w-7 h-7 rounded-full bg-[#831F00] border-none text-white flex items-center justify-center hover:-translate-y-0.5 active:translate-0 cursor-pointer transition-all"
                 >
                   <Pause strokeWidth={2.5} width={14} height={14} />
@@ -164,7 +141,7 @@ const Hero = ({ isPlaying, onPlay, onPause }: VinylRecordProps) => {
           <audio
             ref={audioRef}
             src="/music/No More What Ifs.mp3"
-            preload="auto"
+            preload="none"
           />
         </div>
       </div>

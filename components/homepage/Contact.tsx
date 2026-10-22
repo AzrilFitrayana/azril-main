@@ -1,5 +1,3 @@
-"use client";
-
 const LinkedInIcon = () => (
   <svg
     width="18"
@@ -43,10 +41,10 @@ const MailIcon = () => (
 const Contact = () => {
   return (
     <section id="contactsocial">
-      <div className="flex items-center gap-3 font-mono text-[12px] font-medium text-[#AD2C00] uppercase tracking-widest mb-4">
+      <h2 className="flex items-center gap-3 font-mono text-[12px] font-medium text-[#AD2C00] uppercase tracking-widest mb-4">
         <span className="block w-8 h-px bg-[#AD2C00]" />
         05. Contact
-      </div>
+      </h2>
 
       <div className="bg-[#1A1C1C] rounded-[20px] overflow-hidden">
         <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto]">
@@ -129,7 +127,7 @@ const Contact = () => {
 
             {/* To block */}
             <div className="flex-1 sm:flex-none border-l sm:border-l-0 sm:border-t border-[#4A4C4C] p-6">
-              <p className="font-mono text-[10px] font-medium text-[#7A7B7C] tracking-[0.15em] uppercase mb-1">
+              <p className="font-mono text-[10px] font-medium text-[#B0B1B2] tracking-[0.15em] uppercase mb-1">
                 To ▶
               </p>
               <p className="font-mono text-[12px] text-[#C4C5C6] leading-[1.7]">

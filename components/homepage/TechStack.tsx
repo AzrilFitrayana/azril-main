@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Braces,
   Database,
@@ -28,10 +26,10 @@ const database = ["PostgreSQL", "MongoDB", "MySQL"];
 const TechStack = () => {
   return (
     <section id="techstack" className="mt-4">
-      <div className="flex items-center gap-3 font-mono text-[12px] font-medium text-[#AD2C00] uppercase tracking-widest">
+      <h2 className="flex items-center gap-3 font-mono text-[12px] font-medium text-[#AD2C00] uppercase tracking-widest">
         <span className="block w-8 h-px bg-[#AD2C00]" />
         03. Tech Stack
-      </div>
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
         {[
           {
@@ -67,7 +65,7 @@ const TechStack = () => {
                   {label}
                 </span>
               </div>
-              <p className="text-[12px] text-[#8a8a8a]">{desc}</p>
+              <p className="text-[12px] text-[#595959]">{desc}</p>
             </div>
             <div className="flex flex-wrap gap-2">
               {tags.map((t) => (
